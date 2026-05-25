@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Placeholder functions for the actions
+void registerUser() {
+    cout << "--- Sign-up Page ---\n";
+    cout << "Registration successful!\n";
+}
+
+int main() {
+    char choice;
+
+    cout << "1. Sign-up\n";
+    cout << "2. Login\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    // Outer control flow: Switch statement for menu selection
+    switch (choice) {
+        case '1': 
+            registerUser();
+            break;
+
+        case '2': {
+            string username, password;
+            cout << "\n--- Login Page ---\n";
+            cout << "Enter username: ";
+            cin >> username;
+            cout << "Enter password: ";
+            cin >> password;
+
+            // Inner control flow: If-Else statement for credential verification
+            if (username == "admin" && password == "secure123") {
+                cout << "Login Successful! Welcome back.\n";
+            } else {
+                cout << "Invalid Credentials. Access Denied.\n";
+            }
+            break;
+        }
+
+        default:
+            cout << "Invalid Option! Please restart and select 1 or 2.\n";
+            break;
+    }
+
+    cout << "\nProgram End.\n";
+    return 0;
+}
+
